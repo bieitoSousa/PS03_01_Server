@@ -24,9 +24,6 @@ import java.util.logging.Logger;
  *
  * @author bieito
  */
-
-
-
 public class Main {
 
     private ServerSocket serverSocket;
@@ -55,32 +52,6 @@ public class Main {
 
         }
 
-    }
-
-    public boolean stringProgram() {
-        String inputLine;
-        try {
-            while ((inputLine = in.readLine()) != null) {
-                System.out.println("[Server : recibe]" + inputLine);
-                if (inputLine.indexOf("CLI") != -1) {
-                    if (inputLine.indexOf("hola 5") != -1) {
-                        out.println("si");
-                        System.out.println("[Server] escribe si");
-                        return false;
-                    }
-                    out.println("no");
-                    System.out.println("[Server] escribe no");
-                    return true;
-                } else {
-                    System.out.println("[Server] -----");
-                }
-                out.println(inputLine);
-
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return true;
     }
 
     public boolean intProgram() {
@@ -139,12 +110,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
-    pInt();   
-    } 
-        
-    
-
-   
+        pInt();
+    }
 
     public static void pInt() {
         Main server = new Main();
@@ -155,8 +122,5 @@ public class Main {
 
         };
     }
-    
-    
-    
 
 }
